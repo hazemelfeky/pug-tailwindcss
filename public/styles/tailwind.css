@@ -1,0 +1,340 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Cairo";
+
+  src: url("../fonts/Cairo-VariableFont_wght.ttf");
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+li {
+  margin: 0 !important;
+}
+
+.container {
+  width: 93%;
+}
+
+.width-fit {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.swiper-container .slider-btn {
+  padding: 0.3rem;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 1rem;
+  background-color: #FFF;
+  z-index: 888;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 25%;
+  /* left: 2%; */
+  box-shadow: 0 0 5px #ddd;
+}
+
+.slider-btn.swiper-button-next, .swiper-rtl .swiper-button-prev {
+  right: -25px;
+  left: auto;
+}
+
+.slider-btn.swiper-button-prev, .swiper-rtl .swiper-button-next {
+  left: -25px;
+  right: auto;
+}
+
+.slider-btn.swiper-button-next:after, .slider-btn.swiper-button-prev:after {
+  font-size: 1rem;
+}
+
+/* customs */
+
+.main-title {
+  transition: 1s;
+}
+
+.main-title::before, .main-title::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #2196F3;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.main-title::before {
+  left: -25px;
+}
+
+.main-title::after {
+  right: -25px;
+}
+
+.main-title:hover {
+  color: #FFF;
+  border-color: #FFF;
+}
+
+.main-title:hover::before {
+  -webkit-animation: move-left 0.5s linear both;
+          animation: move-left 0.5s linear both;
+}
+
+@-webkit-keyframes move-left {
+  50% {
+    border-radius: 50%;
+    left: 0;
+    height: 10px;
+    width: 10px;
+  }
+
+  100% {
+    border-radius: 0;
+    left: 0;
+    height: 100%;
+    width: 60%;
+  }
+}
+
+@keyframes move-left {
+  50% {
+    border-radius: 50%;
+    left: 0;
+    height: 10px;
+    width: 10px;
+  }
+
+  100% {
+    border-radius: 0;
+    left: 0;
+    height: 100%;
+    width: 60%;
+  }
+}
+
+.main-title:hover::after {
+  -webkit-animation: move-right 0.5s linear both;
+          animation: move-right 0.5s linear both;
+}
+
+@-webkit-keyframes move-right {
+  50% {
+    border-radius: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+  }
+
+  100% {
+    border-radius: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+  }
+}
+
+@keyframes move-right {
+  50% {
+    border-radius: 50%;
+    right: 0;
+    width: 10px;
+    height: 10px;
+  }
+
+  100% {
+    border-radius: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+  }
+}
+
+.hero {
+  height: calc(100vh - 64px);
+  flex: 2 3;
+}
+
+.hero-img {
+  width: 600px;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -30px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #ECECEC;
+  z-index: -1;
+  transform: skewY(-6deg);
+  transform-origin: top left;
+}
+
+@-webkit-keyframes up-and-down {
+  50% {
+    transform: translateY(10%);
+  }
+}
+
+@keyframes up-and-down {
+  50% {
+    transform: translateY(10%);
+  }
+}
+
+.animate-up-and-down {
+  -webkit-animation: up-and-down 5s ease-in-out infinite;
+          animation: up-and-down 5s ease-in-out infinite;
+}
+
+.hover-up {
+  transition: all 0.4s ease-in-out;
+}
+
+.hover-up:hover {
+  transform: translateY(-12px);
+}
+
+.galleryBox:before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 0%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ddd;
+  opacity: 0.3;
+  z-index: 10;
+  transition: all 0.3s ease-in-out;
+}
+
+@-webkit-keyframes flash {
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes flash {
+  100% {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.galleryBox:hover:before {
+  -webkit-animation: flash 0.3s;
+          animation: flash 0.3s;
+}
+
+.galleryBox img {
+  transition: all 0.3s linear;
+}
+
+.galleryBox img:hover {
+  transform: rotate(5deg) scale(1.08);
+}
+
+.featureBox {
+}
+
+.featureBox .image {
+  position: relative;
+  overflow: hidden;
+}
+
+.featureBox .image::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background-color: #009688;
+}
+
+.featureBox .image::after {
+  content: "";
+  position: absolute;
+  border-style: solid;
+  border-width: 0px 0px 130px 630px;
+  border-color: transparent transparent #fff transparent;
+  bottom: 0;
+  right: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.featureBox:hover .image::after {
+  border-width: 10px 500px 150px 0px;
+}
+
+.featureBox h2 {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.featureBox h2::after {
+  content: "";
+  width: 65%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 4px;
+  bottom: -20px;
+  background-color: #009688;
+}
+
+.featureBox a {
+  position: relative;
+  padding: 10px 30px;
+  margin: 0 auto 30px;
+  display: block;
+  font-size: 25px;
+  font-weight: bold;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 6px;
+  z-index: 1;
+  overflow: hidden;
+  border: 4px solid;
+  border-color: #009688;
+  color: #009688;
+}
+
+.featureBox a::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 100%;
+  left: 0;
+  top: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.featureBox .box:hover a {
+  color: #FFF;
+}
+
+.featureBox:hover a::after {
+  width: 100%;
+  background-color: #009688;
+}

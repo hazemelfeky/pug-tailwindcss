@@ -1,0 +1,10 @@
+include ../mixins/title
+include ../mixins/galleryBox
+
+div(id="gallery").pt-5
+div.pt-10
+  .container.mx-auto.pb-10
+    +title('Gallery')
+    .gallery(class='grid overflow-hidden grid-cols-1 grid-rows-6 md:grid-cols-2 md:grid-rows-3 lg:grid-cols-3 lg:grid-rows-2 gap-10')
+      -for(var i=0; i<6; i++)
+        +galleryBox
