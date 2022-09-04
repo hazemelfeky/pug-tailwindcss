@@ -1,0 +1,28 @@
+mixin price-item(x, y)
+  .price.bg-gray-100.rounded-lg.pt-5(class!=attributes.class)
+    h4(class="m-8 text-3xl leading-8 font-bold text-center")=x
+    .w-20.h-20.mb-8.mx-auto
+      img.w-full(src='./public/pics/price.png')
+    h5.text-blue-500.text-5xl.font-bold.text-center.mb-5 $15
+    span.block.text-gray-500.text-sm.text-center.mb-5 Per Month
+    ul
+      li.p-5.border-t-2.border-gray-200
+        span.font-bold 10 GB HDD Space
+      li.p-5.border-t-2.border-gray-200
+        span.font-bold 5 Email Addresses
+      li.p-5.border-t-2.border-gray-200
+        span.font-bold 2 Subdomains
+      li.p-5.border-t-2.border-gray-200
+        span.font-bold 4 Databases
+      li.p-5.border-t-2.border-gray-200
+        span.font-bold Basic support
+    a(href='#' class='block text-xl font-bold rounded-md text-blue-500 relative width-fit py-4 px-5 my-8 mx-auto border-2 border-blue-500 rounded-lg') choose plane
+
+div.pt-16
+  .container.mx-auto.pb-10
+    +title('PRICING PLANS')
+    .prices.grid.gap-8.grid-cols-1.px-10.pt-5(class="md:px-0 grid grid-cols-1 grid-rows-3 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1")
+      +price-item("Basic")
+      +price-item("Advanced")(class="advanced")
+      +price-item("Professional")
+

@@ -1,0 +1,30 @@
+div
+  .container.mx-auto.pb-10
+    +title('Skills')
+    .skills(class="flex gap-4 items-center")
+      img(src="./public/pics/skills.png" class="hidden lg:block")
+      .skills-details.w-full
+        .skill.mb-8
+          .skill-text.flex.justify-between.mb-2.items-center
+            .skill-name.font-bold HTML
+            .skill-number.px-4.rounded.ring-1 80%
+          .skill-bar.w-full.bg-gray-300.width-fit.h-4
+            span(class="block h-full w-4/5 bg-blue-500")
+        .skill.mb-8
+          .skill-text.flex.justify-between.mb-2.items-center
+            .skill-name.font-bold CSS
+            .skill-number.px-4.rounded.ring-1 85%
+          .skill-bar.w-full.bg-gray-300.width-fit.h-4
+            span(class="block h-full w-10/12 bg-blue-500")
+        .skill.mb-8
+          .skill-text.flex.justify-between.mb-2.items-center
+            .skill-name.font-bold JS
+            .skill-number.px-4.rounded.ring-1 90%
+          .skill-bar.w-full.bg-gray-300.width-fit.h-4
+            span(class="block h-full w-11/12 bg-blue-500")
+        .skill 
+          .skill-text.flex.justify-between.mb-2.items-center
+            .skill-name.font-bold PYTHON
+            .skill-number.px-4.rounded.ring-1 70%
+          .skill-bar.w-full.bg-gray-300.width-fit.h-4
+            span(class="block h-full w-9/12 bg-blue-500")

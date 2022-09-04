@@ -1,0 +1,31 @@
+div.px-10.footer-bg
+  .container.mx-auto.pb-10(class="grid pt-10 gap-10 grid-cols-1 grid-rows-3 md:grid-cols-2 md:grid-rows-2 lg:grid-cols-3 lg:grid-rows-1")
+    .box 
+      h2.text-white.text-5xl.mb-5 Hazem
+      p.leading-loose.text-gray-200.text-lg Lorem Ipsum, Dolor Sit Amet Consectetur Adipisicing Elit. Temporibus Nulla Rem, Dignissimos Iste Aspernatur
+    .box
+      ul
+      -for(var i = 1; i<6; i++)
+        li.list-none
+          a(href='#' class='flex items-center p-4 pl-0 border-b border-gray-500 footer-link')
+            p.text-lg.text-gray-200 important link 
+              span=i
+        
+    .box 
+      ul.text-gray-200
+        li.pb-6
+          p
+            | Egypt, Giza 
+            br
+            | Room Number 220
+        li.pb-6
+          p
+            | Business Hours: From 
+            br
+            | 10:00 To 18:00
+        li.pb-6
+          p
+            | +201023178912
+
+
+

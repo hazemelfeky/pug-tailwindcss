@@ -2,9 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+  .price-item {
+    @apply p-5 border-t-2 border-gray-200 
+  }
+}
+
+.nav-item {
+  @apply px-3 py-2 md:px-6 md:py-4 hover:bg-gray-200 transition hover:border-b-2 hover:border-blue-400;
+}
+
+
 @font-face {
   font-family: "Cairo";
-
   src: url("../fonts/Cairo-VariableFont_wght.ttf");
 }
 
@@ -25,6 +35,8 @@ li {
   width: -moz-fit-content;
   width: fit-content;
 }
+
+
 
 .swiper-container .slider-btn {
   padding: 0.3rem;
@@ -58,6 +70,12 @@ li {
 }
 
 /* customs */
+
+@media (min-width: 1536px){
+  .container {
+    max-width: 1170px !important;
+  }
+}
 
 .main-title {
   transition: 1s;
@@ -253,11 +271,6 @@ li {
 .featureBox {
 }
 
-.featureBox .image {
-  position: relative;
-  overflow: hidden;
-}
-
 .featureBox .image::before {
   content: "";
   position: absolute;
@@ -281,7 +294,7 @@ li {
 }
 
 .featureBox:hover .image::after {
-  border-width: 10px 500px 150px 0px;
+  border-width: 10px 640px 150px 0px;
 }
 
 .featureBox h2 {
@@ -337,4 +350,76 @@ li {
 .featureBox:hover a::after {
   width: 100%;
   background-color: #009688;
+}
+.tests .box {
+  box-shadow: 0 0 10px rgba(119, 119, 119, 0.285);
+  transition: all 0.2s ease-in-out;
+}
+.tests .box:hover {
+  transform: scale(1.08);
+}
+.tests .box:hover img {
+  animation: move-avatar 1s linear infinite;
+}
+@keyframes move-avatar {
+  50% {
+    transform: translateY(10px);
+  }
+}
+.tests img {
+  border: 10px solid #ECECEC;
+  top: -37px;
+  right: -10px;
+}
+
+.members .box {
+  transition: all 0.2s ease-in;
+  min-width: 300px;
+}
+.members .box::before, .members .box::after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  width: 80%;
+  height: 100%;
+  background-color: #ECECEC;
+  z-index: -2;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+}
+.members .box::after {
+  width: 0;
+  background-color: rgba(155, 155, 155, 0.133);
+  z-index: -1;
+}
+.members .box:hover img {
+  transform: scale(1.05) rotate(1deg);
+  filter: grayscale(50%);
+}
+.members .box:hover::after {
+  width: 80%;
+}
+.members h4 {
+  color: #777;
+  min-width: 50px;
+}
+
+@media (min-width: 1024px) {
+  .prices .advanced {
+    transform: translateY(-30px);
+  }
+}
+
+.footer-bg {
+  --tw-bg-opacity: 1;
+  background-color: rgb(30 45 58 / var(--tw-bg-opacity));
+}
+
+.footer-link {
+  transition: all 0.3s linear;
+}
+
+.footer-link:hover {
+  padding-left: 10px;
 }
